@@ -149,7 +149,7 @@ static XF86ModuleVersionInfo dummyVersRec =
 	MODULEVENDORSTRING,
 	MODINFOSTRING1,
 	MODINFOSTRING2,
-	XF86_VERSION_CURRENT,
+	XORG_VERSION_CURRENT,
 	DUMMY_MAJOR_VERSION, DUMMY_MINOR_VERSION, DUMMY_PATCHLEVEL,
 	ABI_CLASS_VIDEODRV,
 	ABI_VIDEODRV_VERSION,
@@ -471,6 +471,10 @@ DUMMYPreInit(ScrnInfoPtr pScrn, int flags)
 	    RETURN;
 	xf86LoaderReqSymLists(ramdacSymbols, NULL);
     }
+    
+    /* We have no contiguous physical fb in physical memory */
+    pScrn->memPhysBase = 0;
+    pScrn->fbOffset = 0;
 
     return TRUE;
 }
