@@ -180,7 +180,7 @@ DUMMYGetRec(ScrnInfoPtr pScrn)
 
     if (pScrn->driverPrivate == NULL)
 	return FALSE;
-        return TRUE;
+    return TRUE;
 }
 
 static void
@@ -301,7 +301,7 @@ DUMMYPreInit(ScrnInfoPtr pScrn, int flags)
 	case 15:
 	case 16:
 	case 24:
-        case 30:
+	case 30:
 	    break;
 	default:
 	    xf86DrvMsg(pScrn->scrnIndex, X_ERROR,
